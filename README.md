@@ -2,6 +2,8 @@
 
 FastAPI application for financial document management with AI-powered semantic search (RAG).
 
+https://github.com/user-attachments/assets/95410945-5835-4c5b-bec5-2c32fa7dc535
+
 ## Tech Stack
 - FastAPI + PostgreSQL + SQLAlchemy
 - ChromaDB (vector database)
@@ -15,6 +17,8 @@ FastAPI application for financial document management with AI-powered semantic s
 pip install -r requirements.txt
 
 ### 2. Create PostgreSQL database
+
+
 CREATE DATABASE finance_db;
 
 ### 3. Configure database
