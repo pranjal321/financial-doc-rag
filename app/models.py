@@ -9,7 +9,7 @@ class User(Base):
     id = Column(Integer, primary_key=True, index=True)
     email = Column(String, unique=True, index=True)
     password = Column(String)
-    role = Column(String, default="client")  # admin, analyst, auditor, client
+    role = Column(String, default="client")
 
 
 class Document(Base):
@@ -20,5 +20,5 @@ class Document(Base):
     company_name = Column(String)
     document_type = Column(String)
     file_path = Column(String)
-    uploaded_by = Column(Integer, ForeignKey("users.id"))  # keep as uploaded_by
+    uploaded_by = Column(Integer, ForeignKey("users.id"))
     created_at = Column(DateTime, default=datetime.utcnow)

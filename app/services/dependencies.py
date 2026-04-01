@@ -27,7 +27,6 @@ def get_current_user(
     if email is None:
         raise HTTPException(status_code=401, detail="Invalid token")
 
-    # ✅ THIS IS THE MOST IMPORTANT LINE
     user = db.query(models.User).filter(models.User.email == email).first()
 
     if user is None:

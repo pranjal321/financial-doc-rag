@@ -8,7 +8,7 @@ def save_document(db: Session, title, company_name, document_type, file_path, us
         company_name=company_name,
         document_type=document_type,
         file_path=file_path,
-        uploaded_by=user.id  # fixed: was user_id
+        uploaded_by=user.id  
     )
 
     db.add(new_doc)

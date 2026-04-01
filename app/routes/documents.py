@@ -53,7 +53,6 @@ def delete_document(document_id: int, db: Session = Depends(get_db), user=Depend
     if not doc:
         raise HTTPException(status_code=404, detail="Document not found")
 
-    # remove file
     if os.path.exists(doc.file_path):
         os.remove(doc.file_path)
 
@@ -84,7 +83,6 @@ def upload_document(
 
         new_doc = save_document(db, title, company_name, document_type, file_path, user)
 
-        # run embedding in background so upload returns fast
         text = extract_text(file_path) or f"{title} {company_name} {document_type}"
         background_tasks.add_task(store_embedding, new_doc.id, text)
 
